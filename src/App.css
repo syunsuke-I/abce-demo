@@ -1,0 +1,139 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container.light {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.app-container.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.app-container.dark .header {
+  border-bottom-color: #333;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.theme-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.app-container.light .theme-toggle {
+  color: #213547;
+  border-color: #ccc;
+}
+
+.app-container.light .theme-toggle:hover {
+  background-color: #f0f0f0;
+}
+
+.app-container.dark .theme-toggle {
+  color: #ffffff;
+  border-color: #555;
+}
+
+.app-container.dark .theme-toggle:hover {
+  background-color: #333;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.editor-panel,
+.preview-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.editor-panel h2,
+.preview-panel h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.editor-wrapper {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.app-container.dark .editor-wrapper {
+  border-color: #333;
+}
+
+.preview-wrapper {
+  flex: 1;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.app-container.dark .preview-wrapper {
+  border-color: #333;
+  background-color: #2a2a2a;
+}
+
+.app-container.dark .preview-wrapper svg text {
+  fill: #ffffff !important;
+}
+
+.app-container.dark .preview-wrapper svg path {
+  stroke: #ffffff !important;
+}
+
+.app-container.dark .preview-wrapper svg .abcjs-title {
+  fill: #ffffff !important;
+}
+
+.app-container.dark .preview-wrapper svg .abcjs-subtitle,
+.app-container.dark .preview-wrapper svg .abcjs-composer,
+.app-container.dark .preview-wrapper svg .abcjs-rhythm,
+.app-container.dark .preview-wrapper svg .abcjs-author,
+.app-container.dark .preview-wrapper svg .abcjs-text {
+  fill: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .editor-panel,
+  .preview-panel {
+    min-height: 300px;
+  }
+}
